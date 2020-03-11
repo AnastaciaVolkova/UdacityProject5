@@ -11,6 +11,7 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request& req, ball_chaser:
     msg.angular.z = req.angular_z;
     motor_command_publisher.publish(msg);
     res.msg_feedback ="linear velocity: " + std::to_string(req.linear_x) + " angular velocity: " + std::to_string(req.angular_z);
+    ROS_INFO_STREAM(res.msg_feedback);
     return true;
 } 
 
