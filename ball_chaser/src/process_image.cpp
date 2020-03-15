@@ -39,9 +39,9 @@ void process_image_callback(const sensor_msgs::Image img)
     else if ( (forward>=left)&&(forward>=right) )
         drive_robot(0.5, 0);
     else if ( (right>=forward)&&(right>=left) )
-        drive_robot(0.5, -0.5);
+        drive_robot(0.0, -0.5);
     else
-        drive_robot(0.5, 0.5);
+        drive_robot(0.0, 0.5);
 }
 
 int main(int argc, char** argv)
