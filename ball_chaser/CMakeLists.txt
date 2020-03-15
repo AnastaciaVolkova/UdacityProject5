@@ -32,7 +32,7 @@ add_executable(drive_bot src/drive_bot.cpp)
 add_executable(process_image src/process_image.cpp)
 
 add_dependencies(drive_bot ball_chaser_generate_messages_cpp)
-add_dependencies(process_image process_image_generate_messages_cpp)
+add_dependencies(process_image ball_chaser_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(drive_bot  ${catkin_LIBRARIES})
