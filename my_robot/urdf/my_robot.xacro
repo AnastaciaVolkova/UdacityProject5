@@ -160,6 +160,38 @@
         <child link="tail"/>
     </joint>
 
+    <link name="small_tail">
+        <inertial>
+            <mass value="0.001"/>
+            <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+            <inertia
+                ixx="0.01" ixy="0" ixz="0"
+                iyy="0.01" iyz="0"
+                izz="0.01"
+            />
+        </inertial>
+        <collision name='small_tail_collision'>
+            <origin xyz="0 0 0" rpy=" 0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+        </collision>
+
+        <visual name='small_tail_visual'>
+            <origin xyz="0 0 0" rpy=" 0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint type="fixed" name="small_tail_joint">
+        <origin xyz="0 -0.1 0.1" rpy="0 0 1.5707"/>
+        <axis xyz="0 1 0"/>
+        <parent link="tail"/>
+        <child link="small_tail"/>
+    </joint>
+
     <link name="left_wheel">
         <collision>
             <geometry>
@@ -271,10 +303,10 @@
         </visual>
     </link>
 
-     <joint type="fixed" name="hokuyo_joint">
-        <origin xyz="0 0.25 0.05" rpy="0 0 0"/>
+    <joint type="fixed" name="hokuyo_joint">
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-        <parent link="crossbar_main"/>
+        <parent link="small_tail"/>
         <child link="hokuyo"/>
     </joint>
 
@@ -291,6 +323,10 @@
     </gazebo>
 
     <gazebo reference="tail">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="small__tail">
         <material>Gazebo/Red</material>
     </gazebo>
 
