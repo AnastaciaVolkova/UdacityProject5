@@ -326,7 +326,7 @@
         <material>Gazebo/Red</material>
     </gazebo>
 
-    <gazebo reference="small__tail">
+    <gazebo reference="small_tail">
         <material>Gazebo/Red</material>
     </gazebo>
 
