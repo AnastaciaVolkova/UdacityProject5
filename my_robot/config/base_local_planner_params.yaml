@@ -15,5 +15,6 @@ TrajectoryPlannerROS:
   vx_samples: 5.0
   vtheta_samples: 10.0
 
+  meter_scoring: true
 
   holonomic_robot: false
