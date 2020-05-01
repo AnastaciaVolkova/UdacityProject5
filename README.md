@@ -1,24 +1,27 @@
-# UdacityProject3 "Where Am I"
+# UdacityProject3 "Map my World"
 
-Course Project from Robotics Software Engineer - Localization. 
-Demonstrates robot localization inside created before world with adaptive Monte Carlo algorithm (amcl).
+Course Project from Robotics Software Engineer - Mapping and SLAM. 
+In this project I create 2D occupancy grid and 3D octomap from a simulated environment using my own robot with the RTAB-Map package.
 ## What does it do:
-1. Launches the custom wolrd with robot.
-2. Launches amcl node to localize the robot.
-3. Launches move_base node to demonstrate robot localization
-
-With help of <b>2D Nav Goal</b> botton in rviz gui user can set a goal and robot attempts to reach it.
-
-In addition there is a possibility to control robot movements via teleop package.
+1. Develop package to interface with the rtabmap_ros package.
+2. Add RGB-D camera.
+3. Create the launch files to launch the robot and map its surrounding environment.
+4. Move around the room to generate a proper map of the environment.
+5. Perform localization using the created map.
 
 To launch world:
 <pre>
 roslaunch my_robot world.launch
 </pre>
 
-To launch amcl and move base node:
+To launch mapping:
 <pre>
-roslaunch my_robot amcl.launch
+roslaunch my_robot mapping.launch
+</pre>
+
+To launch localization:
+<pre>
+roslaunch my_robot localization.launch
 </pre>
 
 To launch teleop:
