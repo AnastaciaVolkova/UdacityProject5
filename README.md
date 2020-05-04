@@ -1,4 +1,4 @@
-# UdacityProject3 "Map my World"
+# UdacityProject5 "Map my World"
 
 Course Project from Robotics Software Engineer - Mapping and SLAM. 
 In this project I create 2D occupancy grid and 3D octomap from a simulated environment using my own robot with the RTAB-Map package.
